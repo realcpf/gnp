@@ -8,19 +8,12 @@
     <title>waitting……</title>
     <script>
         window.onload = () => {
-            var ref = '';
-            if (document.referrer.length > 0) {
-                ref = document.referrer;
-            }
-            try {
-                if (ref.length == 0 && opener.location.href.length > 0) {
-                    ref = opener.location.href;
-                }
-            } catch (e) { } 
+            let ref = window.location.href;
             document.querySelector('#p').innerHTML = ref;
             if (ref.length > 0 && ref.includes('rr-')) {
                 window.location.href = `${ref}.html`
             }
+            
         }
     </script>
 </head>
