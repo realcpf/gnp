@@ -9,9 +9,12 @@
     <script>
         window.onload = () => {
             let ref = window.location.href;
-            document.querySelector('#p').innerHTML = ref;
-            if (ref.length > 0 && ref.includes('rr-')) {
+            if (ref.length > 0 && ref.includes('gnp-')) {
+                document.querySelector('#p').innerHTML = ref;
                 window.location.href = `${ref}.html`
+            } else {
+                document.querySelector('#p').innerHTML = `<div>Are you mean gnp url ?</div>`;
+                window.location.href = '/'
             }
             
         }
@@ -20,6 +23,7 @@
 
 <body>
     <div>
+        
         go to
         <div id="p">
 
