@@ -8,14 +8,18 @@
     <title>waitting……</title>
     <script>
         window.onload = () => {
-            let ref = window.location.href;
-            
-            if (ref.length > 0 && ref.includes('gnp-') && !ref.endsWith('.html')) {
-                document.querySelector('#p').innerHTML = ref;
-                window.location.href = `${ref}.html`
+            let ref = window.location.pathname;
+            if(ref.length > 0){
+                if(ref.includes('gnp-') && !ref.endsWith('.html')){
+                    document.querySelector('#p').innerHTML = ref;
+                    window.location.href = `${ref}.html`
+                } 
+                if(ref.includes('json-')){
+                    document.write(`{"data":{"text":"this is a demo msg",value:"ok"},"status":"ok","code":200}`)
+                }
             } else {
                 document.querySelector('#p').innerHTML = `<div>Are you mean gnp url ?</div>`;
-                window.location.href = '/'
+                window.location.href = '/'  
             }
             
         }
