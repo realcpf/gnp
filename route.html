@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>waitting……</title>
+    <script>
+        window.onload = () => {
+            var ref = '';
+            if (document.referrer.length > 0) {
+                ref = document.referrer;
+            }
+            try {
+                if (ref.length == 0 && opener.location.href.length > 0) {
+                    ref = opener.location.href;
+                }
+            } catch (e) { } 
+            document.querySelector('#p').innerHTML = ref;
+            if (ref.length > 0 && ref.includes('rr-')) {
+                window.location.href = `${ref}.html`
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        go to
+        <div id="p">
+
+        </div>
+    </div>
+</body>
+
+</html>
