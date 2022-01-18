@@ -9,7 +9,8 @@
     <script>
         window.onload = () => {
             let ref = window.location.href;
-            if (ref.length > 0 && ref.includes('gnp-')) {
+            
+            if (ref.length > 0 && ref.includes('gnp-') && !ref.endsWith('.html')) {
                 document.querySelector('#p').innerHTML = ref;
                 window.location.href = `${ref}.html`
             } else {
